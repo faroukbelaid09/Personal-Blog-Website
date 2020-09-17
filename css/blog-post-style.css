@@ -1,0 +1,104 @@
+@import "navbar-style.css";
+@import "footer-style.css";
+
+/* Global Style */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h3 {
+  margin: 1rem 0;
+  color: var(--light-black);
+}
+
+p {
+  color: var(--drak-gray);
+  line-height: 1.5;
+}
+
+/* Main Section */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  grid-auto-rows: auto;
+  row-gap: 3rem;
+  grid-template-areas:
+    "hd hd"
+    "sid content"
+    "ft ft";
+}
+
+/* Header Section */
+
+header {
+  grid-area: hd;
+}
+
+/* Author Info Section */
+
+.author-info {
+  grid-area: sid;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem 1rem 0.8rem;
+}
+
+.author-img {
+  width: 18.75rem;
+  height: 18.75rem;
+  margin-top: 10rem;
+  border-radius: 50%;
+  align-self: center;
+  border: 4px solid lightgreen;
+  background: url("../images/doctor-1.png") center/contain;
+}
+
+/* Content Section */
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.content img {
+  width: 70%;
+  align-self: center;
+}
+
+.content h1 {
+  font-size: 2rem;
+}
+
+/* Footer Section */
+
+footer {
+  grid-area: ft;
+}
+
+@media screen and (max-width: 800px) {
+  /* Main Section */
+
+  .grid-container {
+    grid-template-areas:
+      "hd hd"
+      "content content"
+      "sid sid"
+      "ft ft";
+  }
+
+  /* Author Info Section */
+
+  .author-img {
+    margin-top: 5rem;
+  }
+
+  /* Content Section */
+
+  .content {
+    padding: 0 2rem;
+  }
+}
